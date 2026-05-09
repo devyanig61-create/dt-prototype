@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Bakery - Full Website</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:#fff8f0;
+    color:#333;
+}
+
+/* NAVBAR */
+
+.navbar{
+    background:#4b1e00;
+    color:white;
+    padding:18px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:bold;
+}
+
+.nav-links button{
+    background:none;
+    border:none;
+    color:white;
+    margin-left:15px;
+    font-size:16px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+/* SECTIONS */
+
+.section{
+    display:none;
+    padding:40px;
+}
+
+.active{
+    display:block;
+}
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:80px 20px;
+    background:linear-gradient(to right,#ffe0c2,#fff8f0);
+}
+
+.hero h1{
+    font-size:60px;
+    color:#4b1e00;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:22px;
+}
+
+/* BUTTON */
+
+.btn{
+    background:#d2691e;
+    color:white;
+    border:none;
+    padding:14px 24px;
+    border-radius:10px;
+    cursor:pointer;
+    margin-top:20px;
+    font-size:16px;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#8b4513;
+}
+
+/* PRODUCTS */
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+.card{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h2{
+    color:#8b4513;
+    margin-bottom:10px;
+}
+
+.price{
+    color:#d2691e;
+    font-size:24px;
+    font-weight:bold;
+    margin:10px 0;
+}
+
+.card p{
+    margin:6px 0;
+    line-height:1.5;
+}
+
+/* CART */
+
+.cart-item{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    margin:15px 0;
+}
+
+.total{
+    font-size:28px;
+    margin-top:20px;
+    color:#8b4513;
+}
+
+/* CONTACT */
+
+.contact-form{
+    max-width:600px;
+    margin:auto;
+}
+
+input,textarea{
+    width:100%;
+    padding:14px;
+    margin:12px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+/* ORDER */
+
+.order-box{
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    text-align:center;
+    max-width:500px;
+    margin:auto;
+}
+
+.token{
+    font-size:60px;
+    color:#8b4513;
+    margin:20px 0;
+}
+
+/* FOOTER */
+
+.footer{
+    background:#4b1e00;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+    font-size:42px;
+}
+
+.section{
+    padding:20px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="logo">
+🍞 Smart Bakery
+</div>
+
+<div class="nav-links">
+
+<button onclick="showPage('home')">
+Home
+</button>
+
+<button onclick="showPage('products')">
+Products
+</button>
+
+<button onclick="showPage('about')">
+About
+</button>
+
+<button onclick="showPage('contact')">
+Contact
+</button>
+
+<button onclick="showPage('cart')">
+Cart
+</button>
+
+<button onclick="showPage('orders')">
+Orders
+</button>
+
+</div>
+
+</div>
+
+<!-- HOME PAGE -->
+
+<section id="home" class="section active">
+
+<div class="hero">
+
+<h1>
+Freshly Baked With Love ❤️
+</h1>
+
+<p>
+Smart Bakery App with Freshness Tracking,
+Online Ordering & Digital Token System
+</p>
+
+<button class="btn"
+onclick="showPage('products')">
+Shop Now
+</button>
+
+</div>
+
+</section>
+
+<!-- PRODUCTS PAGE -->
+
+<section id="products" class="section">
+
+<h1>Bakery Products 🍰</h1>
+
+<div class="products">
+
+<!-- PRODUCT 1 -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h2>Black Forest Cake</h2>
+
+<p class="price">₹699</p>
+
+<p><b>Category:</b> Cake</p>
+
+<p><b>Weight:</b> 1 Kg</p>
+
+<p><b>Flavor:</b> Chocolate & Cherry</p>
+
+<p><b>Ingredients:</b>
+Flour, Sugar, Cocoa Powder,
+Cream, Chocolate Syrup
+</p>
+
+<p><b>Manufactured Date:</b>
+12 May 2026
+</p>
+
+<p><b>Expiry Date:</b>
+15 May 2026
+</p>
+
+<p><b>Freshness:</b>
+Freshly baked 10 mins ago
+</p>
+
+<p><b>Calories:</b>
+350 kcal
+</p>
+
+<p><b>Rating:</b>
+⭐ 4.8/5
+</p>
+
+<button class="btn"
+onclick="addToCart('Black Forest Cake',699)">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+<!-- PRODUCT 2 -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h2>Fresh Bread</h2>
+
+<p class="price">₹45</p>
+
+<p><b>Category:</b> Bread</p>
+
+<p><b>Weight:</b> 400 g</p>
+
+<p><b>Ingredients:</b>
+Wheat Flour, Butter,
+Salt, Water
+</p>
+
+<p><b>Manufactured Date:</b>
+12 May 2026
+</p>
+
+<p><b>Expiry Date:</b>
+14 May 2026
+</p>
+
+<p><b>Freshness:</b>
+Baked 20 mins ago
+</p>
+
+<p><b>Calories:</b>
+120 kcal
+</p>
+
+<p><b>Rating:</b>
+⭐ 4.6/5
+</p>
+
+<button class="btn"
+onclick="addToCart('Fresh Bread',45)">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+<!-- PRODUCT 3 -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h2>Chocolate Pastry</h2>
+
+<p class="price">₹120</p>
+
+<p><b>Category:</b> Pastry</p>
+
+<p><b>Weight:</b> 150 g</p>
+
+<p><b>Ingredients:</b>
+Chocolate Cream, Milk,
+Sugar, Flour
+</p>
+
+<p><b>Manufactured Date:</b>
+12 May 2026
+</p>
+
+<p><b>Expiry Date:</b>
+13 May 2026
+</p>
+
+<p><b>Freshness:</b>
+Baked 5 mins ago
+</p>
+
+<p><b>Calories:</b>
+280 kcal
+</p>
+
+<p><b>Rating:</b>
+⭐ 4.9/5
+</p>
+
+<button class="btn"
+onclick="addToCart('Chocolate Pastry',120)">
+Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT PAGE -->
+
+<section id="about" class="section">
+
+<div class="hero">
+
+<h1>About Smart Bakery</h1>
+
+<p>
+Smart Bakery provides fresh bakery products
+with digital freshness tracking,
+customization and online ordering system.
+</p>
+
+</div>
+
+</section>
+
+<!-- CONTACT PAGE -->
+
+<section id="contact" class="section">
+
+<h1>Contact Us 📞</h1>
+
+<div class="contact-form">
+
+<input type="text"
+placeholder="Enter Your Name">
+
+<input type="email"
+placeholder="Enter Your Email">
+
+<textarea rows="6"
+placeholder="Enter Message"></textarea>
+
+<button class="btn">
+Send Message
+</button>
+
+</div>
+
+</section>
+
+<!-- CART PAGE -->
+
+<section id="cart" class="section">
+
+<h1>Your Cart 🛒</h1>
+
+<div id="cartItems"></div>
+
+<h2 class="total"
+id="totalPrice">
+Total: ₹0
+</h2>
+
+<button class="btn"
+onclick="placeOrder()">
+Place Order
+</button>
+
+</section>
+
+<!-- ORDERS PAGE -->
+
+<section id="orders" class="section">
+
+<div class="order-box">
+
+<h1>Order Placed Successfully 🎉</h1>
+
+<p>
+Your order is being prepared.
+</p>
+
+<div class="token"
+id="tokenNumber">
+--
+</div>
+
+<p>
+Estimated Waiting Time:
+20 mins
+</p>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<div class="footer">
+
+<h2>🍞 Smart Bakery</h2>
+
+<p>
+Freshness • Quality • Convenience
+</p>
+
+<p style="margin-top:10px;">
+© 2026 Smart Bakery Project
+</p>
+
+</div>
+
+<script>
+
+/* PAGE NAVIGATION */
+
+function showPage(pageId){
+
+let sections =
+document.querySelectorAll('.section');
+
+sections.forEach(section=>{
+section.classList.remove('active');
+});
+
+document
+.getElementById(pageId)
+.classList.add('active');
+
+}
+
+/* CART */
+
+let cart = [];
+
+let total = 0;
+
+/* ADD TO CART */
+
+function addToCart(name,price){
+
+cart.push({name,price});
+
+total += price;
+
+updateCart();
+
+alert(name + " added to cart!");
+
+}
+
+/* UPDATE CART */
+
+function updateCart(){
+
+let cartItems =
+document.getElementById('cartItems');
+
+cartItems.innerHTML = "";
+
+cart.forEach(item=>{
+
+cartItems.innerHTML += `
+
+<div class="cart-item">
+
+<h2>${item.name}</h2>
+
+<p>Price: ₹${item.price}</p>
+
+</div>
+
+`;
+
+});
+
+document
+.getElementById('totalPrice')
+.innerHTML = "Total: ₹" + total;
+
+}
+
+/* PLACE ORDER */
+
+function placeOrder(){
+
+if(cart.length===0){
+
+alert("Cart is empty!");
+
+return;
+
+}
+
+let token =
+Math.floor(Math.random()*1000);
+
+document
+.getElementById('tokenNumber')
+.innerHTML = token;
+
+cart = [];
+
+total = 0;
+
+updateCart();
+
+showPage('orders');
+
+alert("Order Placed Successfully!");
+
+}
+
+</script>
+
+</body>
+</html>
